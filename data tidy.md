@@ -1,16 +1,16 @@
-#concatenate two dataframe 
+### concatenate two dataframe 
 ```
 df_cell = pd.merge(df_cell, cell_tmp_1,how='left',left_on='cellID',right_on='index')
 ```
-#rename one colomn in dataframe
+### rename one colomn in dataframe
 ```
 df_cell.rename(columns = {'cluster_ID_name':'clusterName'}, inplace=True)
 ```
-#string concatenation
+### string concatenation
 ```
 df_cell['title']=[ 'MP '+i.split('_')[0].split('-')[1] for i in df_cell['cellID'].tolist()]
 ```
-#make a 3D array by dictionary
+### make a 3D array by dictionary
 ```
 df_marker={}
 for i in range(0,5):
@@ -18,7 +18,7 @@ for i in range(0,5):
     df_marker[i]=df_marker_i
     print(df_marker_i)
 ```
-#FOR
+### FOR statement
 ```
 markerGenes = {}
 for clusterID,clusterName in clusters.items():
