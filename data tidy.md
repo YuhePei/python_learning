@@ -47,3 +47,13 @@ for i in range(0,6):
     df_gene[i].to_excel(writer,sheet_names[i],index=False)
 writer.save()
 ```
+### enumerate fuction to get indexs in for statement  and the use of "+"
+```
+df_k_number={}
+for i,sheet in enumerate(sheet_names):
+    df_k_number[i]=pd.read_table(sheet+'.txt',header=None,sep='\t',names=['gene_short_name','k_number'])
+    print(df_k_number[i])
+    df_k_number[i]=pd.merge(df_k_number[i], k_number,how='left')
+    df_k_number[i].drop('hierarchy',axis=1,inplace=True)
+    print(df_k_number[i])
+```
