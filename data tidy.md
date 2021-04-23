@@ -57,3 +57,11 @@ for i,sheet in enumerate(sheet_names):
     df_k_number[i].drop('hierarchy',axis=1,inplace=True)
     print(df_k_number[i])
 ```
+### if else statement
+```
+for i in range(0,9):
+    if i <6 :
+        df_downloaded[i]['cellID']='H'+str(i+1)+'_'+df_downloaded[i]['cellID']
+    else :
+        df_downloaded[i]['cellID']='T2D'+str(i-5)+'_'+ df_downloaded[i]['cellID']
+```
